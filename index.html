@@ -149,7 +149,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   <p>押さえ方図解・指番号・コード解説つき</p>
 </header>
 
-<main>
+<main role="main">
   <!-- コード検索・一覧 -->
   <section class="card">
     <h2>🔍 コードを探す</h2>
@@ -157,8 +157,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
       <input type="text" class="search-input" id="searchInput" placeholder="コード名で検索（例：Am、G7）" oninput="filterChords()" aria-label="コード名で検索（例：Am、G7）">
     </div>
     <div class="filter-btns">
-      <button class="filter-btn active" onclick="filterByType(this,'all')">すべて</button>
-      <button class="filter-btn" onclick="filterByType(this,'major')">メジャー</button>
+      <button class="filter-btn active" onclick="filterByType(this,'all')" aria-label="すべて">すべて</button>
+      <button class="filter-btn" onclick="filterByType(this,'major')" aria-label="メジャー">メジャー</button>
       <button class="filter-btn" onclick="filterByType(this,'minor')">マイナー</button>
       <button class="filter-btn" onclick="filterByType(this,'7th')">セブンス</button>
       <button class="filter-btn" onclick="filterByType(this,'sus4')">sus4</button>
