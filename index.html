@@ -168,7 +168,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
       <button class="filter-btn" onclick="filterByType(this,'beginner')">初心者向け</button>
     </div>
     <div class="chord-grid" id="chordGrid"></div>
-    <div class="no-result hidden" id="noResult">コードが見つかりませんでした</div>
+    <div class="no-result hidden" id="noResult">コードが見つかりませんでした<br><button onclick="resetChordFilter()" style="margin-top:10px;padding:8px 20px;background:#4f46e5;color:#fff;border:none;border-radius:20px;font-size:0.83rem;font-weight:700;cursor:pointer;">条件をリセットする</button></div>
   </section>
 
   <!-- コード詳細 -->
@@ -356,6 +356,15 @@ function filterByType(btn, type) {
 
 function filterChords() { renderChords(); }
 
+function resetChordFilter() {
+    document.getElementById('searchInput').value = '';
+    currentType = 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const allBtn = document.querySelector('.filter-btn[onclick*="all"]');
+    if (allBtn) allBtn.classList.add('active');
+    renderChords();
+}
+
 function renderChordDiagram(chord) {
   const strings = 6;
   const frets = 5;
@@ -497,7 +506,7 @@ renderProgressions();
           <p style="font-size:.75rem;color:#9ca3af;margin-top:.25rem">— 田中さん（30代・会社員）★★★★★</p>
         </div>
         <div style="background:#f9fafb;border-radius:8px;padding:.75rem">
-          <p style="font-size:.75rem;color:#374151">「無料でここまで詳しく診断できるとは思いませんでした。」</p>
+          <p style="font-size:.75rem;color:#374151">「無料でここまで詳しく調べられるとは思いませんでした。」</p>
           <p style="font-size:.75rem;color:#9ca3af;margin-top:.25rem">— 佐藤さん（40代・主婦）★★★★★</p>
         </div>
         <div style="background:#f9fafb;border-radius:8px;padding:.75rem">
