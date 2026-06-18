@@ -256,6 +256,14 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         <canvas id="difficultyChart" style="max-height:250px;"></canvas>
       </div>
     </div>
+    <div class="difficulty-filter" style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.8rem;">
+      <span style="font-size: 0.85rem; color: #ffcc80; font-weight: 600; width: 100%; margin-bottom: 0.4rem;">難易度で絞る：</span>
+      <button class="filter-btn" onclick="filterByDifficulty('all')">すべて</button>
+      <button class="filter-btn" onclick="filterByDifficulty('超易')">超易</button>
+      <button class="filter-btn" onclick="filterByDifficulty('易')">易</button>
+      <button class="filter-btn" onclick="filterByDifficulty('普通')">普通</button>
+      <button class="filter-btn" onclick="filterByDifficulty('難')">難</button>
+    </div>
     <div class="chord-grid" id="chordGrid"></div>
     <div class="no-result hidden" id="noResult">コードが見つかりませんでした<br><button onclick="resetChordFilter()" style="margin-top:10px;padding:8px 20px;background:#4f46e5;color:#fff;border:none;border-radius:20px;font-size:0.83rem;font-weight:700;cursor:pointer;">条件をリセットする</button></div>
   </section>
